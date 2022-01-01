@@ -12,31 +12,31 @@ const TogglableBlog = (props) => {
   const details=children[1]
   if(details){
     return (
-        <div>
-          <div style={hideWhenVisible}>
-            {blog}
-            <button onClick={toggleVisibility}>{props.hideButtonLabel}</button>
-          </div>
-          <div style={showWhenVisible}>
-            {details}
-            <button onClick={toggleVisibility}>{props.showButtonLabel}</button>
-          </div>
+      <div>
+        <div style={hideWhenVisible}>
+          {blog}
+          <button onClick={toggleVisibility}>{props.hideButtonLabel}</button>
         </div>
-      )
+        <div style={showWhenVisible}>
+          {details}
+          <button onClick={toggleVisibility}>{props.showButtonLabel}</button>
+        </div>
+      </div>
+    )
   }
   else{
     return (
-        <div>
-          <div style={hideWhenVisible}>
-            {blog}
-            <button onClick={toggleVisibility}>{props.hideButtonLabel}</button>
-          </div>
-          <div style={showWhenVisible}>
-            {blog}
-            <button onClick={toggleVisibility}>{props.showButtonLabel}</button>
-          </div>
+      <div>
+        <div style={hideWhenVisible}>
+          {blog}
+          <button onClick={toggleVisibility}>{props.hideButtonLabel}</button>
         </div>
-      )
+        <div style={showWhenVisible}>
+          {blog}
+          <button onClick={toggleVisibility}>{props.showButtonLabel}</button>
+        </div>
+      </div>
+    )
   }
 }
 TogglableBlog.propTypes = {

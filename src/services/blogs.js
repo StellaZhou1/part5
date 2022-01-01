@@ -20,7 +20,7 @@ const create = async newObject => {
   return response.data
 }
 
-const incrementLike = async (likes,id) =>{
+const incrementLike = async (likes,id) => {
   const newLike = {
     likes: likes
   }
@@ -28,7 +28,7 @@ const incrementLike = async (likes,id) =>{
   return response.data
 }
 
-const remove = async (id) =>{
+const remove = async (id) => {
   const config = {
     headers: { Authorization: token }
   }
