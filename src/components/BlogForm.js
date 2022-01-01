@@ -1,5 +1,10 @@
 import blogService from '../services/blogs'
-const createBlogForm = ({title,author,url,blogs,setTitle,setAuthor,setUrl,setBlogs,setMessage,setSuccess}) => {
+import React, { useState } from 'react'
+
+const BlogForm = ({blogs,setBlogs,setMessage,setSuccess}) => {
+    const [author, setAuthor] = useState('')
+    const [title, setTitle] = useState('')
+    const [url, setUrl] = useState('')
     const handleCreateBlog = (event) => {
         event.preventDefault()
         const newBlog = {
@@ -37,4 +42,4 @@ const createBlogForm = ({title,author,url,blogs,setTitle,setAuthor,setUrl,setBlo
         </div>
     )
 }
-export default createBlogForm
+export default BlogForm

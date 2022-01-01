@@ -1,25 +1,26 @@
 import React, { useState, useEffect } from 'react'
-import Blog from './components/Blog'
+
+import Blogs from './components/Blogs'
 import LoginForm from './components/LoginForm'
-import CreateBlogForm from './components/CreateBlogForm'
+import BlogForm from './components/BlogForm'
 import Notification from './components/Notification'
 import blogService from './services/blogs'
 
+import TogglableForm from './components/TogglableForm'
 
 const App = () => {
   const [blogs, setBlogs] = useState([])
   const [username, setUsername] = useState('') 
   const [password, setPassword] = useState('') 
   const [user, setUser] = useState(null)
-  const [author, setAuthor] = useState('')
-  const [title, setTitle] = useState('')
-  const [url, setUrl] = useState('')
   const [message,setMessage] = useState('')
   const [success,setSuccess] = useState(true)
+ 
 
   useEffect(() => {
     blogService.getAll().then(blogs =>
-      setBlogs( blogs )
+      {setBlogs( blogs )
+      }
     )  
   }, [])
 
@@ -55,11 +56,11 @@ const App = () => {
             <input type="submit" value='logout'/>
           </form>
         </div>
-        {blogs.map(blog =>
-          <Blog key={blog.id} blog={blog} />
-        )}
-        <CreateBlogForm author={author} title={title} url={url} blogs={blogs} setAuthor={setAuthor} 
-        setTitle={setTitle} setUrl={setUrl} setBlogs={setBlogs} setMessage={setMessage} setSuccess={setSuccess}/>
+        <Blogs blogs={blogs} setBlogs={setBlogs}/>
+        <TogglableForm hideButtonLabel='create new blog' showButtonLabel='cancel'>
+          <BlogForm blogs={blogs} setBlogs={setBlogs} setMessage={setMessage} setSuccess={setSuccess}/>
+        </TogglableForm>
+        
       </div>
 
     )
