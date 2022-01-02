@@ -27,8 +27,8 @@ const BlogDetails = ({ blog,blogs,setBlogs }) => {
     <div>
       <p>{blog.title}</p>
       <p>{blog.url}</p>
-      <p>likes {blog.likes}
-        <button onClick={handleLike}>like</button>
+      <p className='likes'>likes {blog.likes}
+        <button onClick={handleLike} id='like'>like</button>
       </p>
       <p>{blog.author}</p>
       <button onClick={handleRemove}>remove</button>

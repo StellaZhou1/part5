@@ -16,6 +16,24 @@ const App = () => {
   const [message,setMessage] = useState('')
   const [success,setSuccess] = useState(true)
 
+  const createBlog = (newBlog) => {
+    blogService.create(newBlog)
+      .then(
+        (createdBlog) => {
+          setMessage(`A new blog ${createdBlog.title} by ${createdBlog.author} added`)
+          setSuccess(true)
+          setTimeout(() => {setMessage(null)}, 5000)
+          setBlogs(blogs.concat(createdBlog))
+
+        }
+      )
+      .catch(error => {
+        setSuccess(false)
+        setMessage(error.response.data.error)
+        setTimeout(() => {setMessage(null)}, 5000)
+      })
+  }
+
 
   useEffect(() => {
     blogService.getAll().then(blogs =>
@@ -58,7 +76,7 @@ const App = () => {
         </div>
         <Blogs blogs={blogs} setBlogs={setBlogs}/>
         <TogglableForm hideButtonLabel='create new blog' showButtonLabel='cancel'>
-          <BlogForm blogs={blogs} setBlogs={setBlogs} setMessage={setMessage} setSuccess={setSuccess}/>
+          <BlogForm createBlog={createBlog}/>
         </TogglableForm>
 
       </div>
