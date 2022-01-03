@@ -1,0 +1,31 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=6627
+END=8734
+title=Blog app Login form is shown
+[CHAPTER]
+TIMEBASE=1/1000
+START=8781
+END=10843
+title=Blog app Login succeeds with correct credentials
+[CHAPTER]
+TIMEBASE=1/1000
+START=10733
+END=12908
+title=Blog app Login fails with wrong credentials
+[CHAPTER]
+TIMEBASE=1/1000
+START=10518
+END=15087
+title=Blog app When logged in A blog can be created
+[CHAPTER]
+TIMEBASE=1/1000
+START=13912
+END=19669
+title=Blog app When logged in User can like a blog
+[CHAPTER]
+TIMEBASE=1/1000
+START=20245
+END=25439
+title=Blog app When logged in Creator can delete a blog

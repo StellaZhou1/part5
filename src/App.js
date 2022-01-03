@@ -68,7 +68,7 @@ const App = () => {
       <div>
         <h2>blogs</h2>
         <Notification success={success} message={message}/>
-        <div>
+        <div className='logged-in'>
           {user.username} logged in
           <form onSubmit={handleLogout}>
             <input type="submit" value='logout'/>

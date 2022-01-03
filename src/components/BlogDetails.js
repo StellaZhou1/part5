@@ -31,7 +31,7 @@ const BlogDetails = ({ blog,blogs,setBlogs }) => {
         <button onClick={handleLike} id='like'>like</button>
       </p>
       <p>{blog.author}</p>
-      <button onClick={handleRemove}>remove</button>
+      <button onClick={handleRemove} id='remove-button'>remove</button>
     </div>)
 }
 export default BlogDetails

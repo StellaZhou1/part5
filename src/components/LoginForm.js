@@ -42,9 +42,9 @@ const LoginForm = ({ username,password,setUsername,setPassword,setUser,setMessag
   return (
     <div>
       <form onSubmit={handleLogin}>
-        <div>username<input type='text' name='username' onChange={handleUsernameChange} value={username}/></div>
-        <div>password<input type='password' name='password' onChange={handlePasswordChange} value={password}/></div>
-        <input type="submit" value='login'/>
+        <div>username<input type='text' name='username' id='username' onChange={handleUsernameChange} value={username}/></div>
+        <div>password<input type='password' name='password' id='password' onChange={handlePasswordChange} value={password}/></div>
+        <input type="submit" id='login-button' value='login'/>
       </form>
     </div>
   )}

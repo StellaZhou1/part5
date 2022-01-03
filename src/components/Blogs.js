@@ -7,7 +7,7 @@ const Blogs = ({ blogs,setBlogs }) => {
     return b.likes - a.likes
   })
   return (
-    <div>
+    <div id='blogs-list'>
       {blogs.map(blog =>
         <div key={blog.id} className={'blogBlock'}>
           <TogglableBlog hideButtonLabel='view' showButtonLabel='hide'>

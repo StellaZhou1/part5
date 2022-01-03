@@ -11,7 +11,7 @@ const TogglableForm = (props) => {
   return (
     <div>
       <div style={hideWhenVisible}>
-        <button onClick={toggleVisibility}>{props.hideButtonLabel}</button>
+        <button onClick={toggleVisibility} id='show-blogform-button'>{props.hideButtonLabel}</button>
       </div>
       <div style={showWhenVisible}>
         {props.children}

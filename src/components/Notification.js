@@ -24,10 +24,10 @@ const Notification = ({ message,success }) => {
     return null
   }
   if (success)
-    return (<div style={successStyle}>
+    return (<div style={successStyle} className='notification'>
       {message}</div>)
   else
-    return (<div style={errorStyle}>
+    return (<div style={errorStyle} className='notification'>
       {message}
     </div>)
 }
